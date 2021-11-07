@@ -1,0 +1,197 @@
+// SMA Inverter 1 (SMA Tripower 8)  
+Bridge modbus:tcp:inverter1 "SMA Inverter 1 Bridge" [ host="192.168.50.41", port=502, id=3, connectMaxTries=3] {
+// SMA Inverter Device Type
+	Bridge poller DevType "SMA Inverter 1 Poller Device Type" [ start=30053, length=4, refresh=60000, type="input" ] {
+
+		Thing data type "SMA Inverter 1 Device Type" [ readStart="30053", readValueType="uint32" ] 
+
+	}
+
+// SMA Inverter Status
+	Bridge poller SMA_Status "SMA Inverter 1 Poller Status"          [ start=30201, length=36, refresh=20000, type="input" ] {
+
+               Thing data status "SMA Inverter 1 Status" [ readStart="30201", readValueType="int32" ]
+               Thing data Grid_Contactor "SMA Inverter 1 Grid Contactor" [ readStart="30217", readValueType="int32" ]
+               Thing data Max_Power "SMA Inverter 1 Max Power" [ readStart="30231", readValueType="int32" ]
+               Thing data Set_Max_Power "SMA Inverter 1 Set Max Power" [ readStart="30233", readValueType="int32" ]
+
+	}
+
+	Bridge poller PowerDrawn "SMA Inverter 1 Poller Power Drawn" [ start=30865, length=4, refresh=5000, type="input" ] {
+	    
+		Thing data PowerDrawn "SMA Inverter 1 Power Drawn" [ readStart="30865", readValueType="int32", readTransform="JS(smalimit.js)" ]
+		Thing data PowerGridFeedIn "SMA Inverter 1 Power Grid Feed In" [ readStart="30867", readValueType="int32", readTransform="JS(smalimit.js)" ]
+ 
+	}
+
+// SMA Inverter Yield
+	Bridge poller Yield "SMA Inverter 1 Poller Yield" [ start=30517, length=36, refresh=60000, type="input" ] {
+
+               Thing data Day_Yield "SMA Inverter 1 Day Yield" [ readStart="30537", readValueType="int32", readTransform="JS(smalimit_undef.js)" ]
+               Thing data Total_Yield "SMA Inverter 1 Total Yield" [ readStart="30531", readValueType="int32", readTransform="JS(smalimit_undef.js)" ]
+
+	}
+
+// SMA Inverter Power Section A & Total
+	Bridge poller power_a "SMA Inverter 1 Poller Power A and Total" [ start=30769, length=20, refresh=5000, type="input" ] {
+
+	       Thing data currentA_input "SMA Inverter 1 Current Input A" [ readStart="30769", readValueType="int32", readTransform="JS(smalimit1000.js)" ]
+	       Thing data voltageA_input "SMA Inverter 1 Voltage A" [ readStart="30771", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+	       Thing data powerA_input "SMA Inverter 1 Power A" [ readStart="30773", readValueType="int32", readTransform="JS(smalimit.js)" ]
+	       Thing data active_power "SMA Inverter 1 Active Power" [ readStart="30775", readValueType="int32", readTransform="JS(smalimit.js)" ]
+	       Thing data power_L1 "SMA Inverter 1 Power L1" [ readStart="30777", readValueType="int32", readTransform="JS(smalimit.js)" ]
+	       Thing data power_L2 "SMA Inverter 1 Power L2" [ readStart="30779", readValueType="int32", readTransform="JS(smalimit.js)" ]
+	       Thing data power_L3 "SMA Inverter 1 Power L3" [ readStart="30781", readValueType="int32", readTransform="JS(smalimit.js)" ]
+	       Thing data volt_G1 "SMA Inverter 1 Volt G1" [ readStart="30783", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+	       Thing data volt_G2 "SMA Inverter 1 Volt G2" [ readStart="30785", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+	       Thing data volt_G3 "SMA Inverter 1 Volt G3" [ readStart="30787", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+
+	}
+
+// SMA Inverter Power Section B
+	Bridge poller power_b "SMA Inverter 1 Poller Power B" [ start=30957, length=8, refresh=5000, type="input" ] {
+
+               Thing data currentB_input "SMA Inverter 1 Current Input B" [ readStart="30957", readValueType="int32", readTransform="JS(smalimit1000.js)" ]
+	       Thing data voltageB_input "SMA Inverter 1 Voltage B" [ readStart="30959", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+	       Thing data powerB_input "SMA Inverter 1 Power B" [ readStart="30961", readValueType="int32", readTransform="JS(smalimit.js)" ] 
+
+	}
+
+// SMA Inverter Temperature
+	Bridge poller InternalTemperature "SMA Inverter 1 Poller Internal Temperature" [ start=34113, length=2, refresh=15000, type="input" ] {
+	    
+		Thing data InternalTemperature "SMA Inverter 1 Internal Temperature" [ readStart="34113", readValueType="int32", readTransform="JS(smalimit10_undef.js)" ]
+
+	}
+
+
+// SMA Inverter Operation
+	Bridge poller SMA_Status_Operate "SMA Inverter 1 Poller Status Operate" [ start=40029, length=4, refresh=15000, type="holding" ] {
+
+	       Thing data operatestatus "SMA Inverter 1 Status Operate" [ readStart="40029", readValueType="uint32" ]
+
+	}
+}
+
+
+// SMA Inverter 2 (SunnyBoy Storage 3.7)
+Bridge modbus:tcp:inverter2 "SMA Inverter 2 Bridge" [ host="192.168.50.42", port=502, id=3, connectMaxTries=3] {
+// SMA SunnyBoy Storage 3.7
+	Bridge poller device_typ "SMA Inverter 2 Poller Device Type" [ start=30053, length=4, refresh=60000, type="input" ] {
+	    
+		Thing data device_typ "SMA Inverter 2 Device Type" [ readStart="30053", readValueType="int32"]
+ 
+	}
+
+// SMA SunnyBoy Storage 3.7 Condition
+	Bridge poller status "SMA Inverter 2 Poller Status" [ start=30201, length=4, refresh=15000, type="input" ] {
+	    
+		Thing data status "SMA Inverter 2 Status" [ readStart="30201", readValueType="int32"]
+	 
+}
+
+// SMA SunnyBoy Storage 3.7 GridRelay on/off
+	Bridge poller GridRelay "SMA Inverter 2 Poller Grid Relay" [ start=30217, length=4, refresh=5000, type="input" ] {
+	    
+		Thing data GridRelay "SMA Inverter 2 Grid Relay" [ readStart="30217", readValueType="int32"]
+	 
+	}
+
+// SMA SunnyBoy Storage 3.7 Total Yield.
+	Bridge poller TotalYield "SMA Inverter 2 Poller Total Yield" [ start=30531, length=4, refresh=60000, type="input" ] {
+	    
+		Thing data TotalYield "SMA Inverter 2 Total Yield" [ readStart="30531", readValueType="int32", readTransform="JS(smalimit_undef.js)" ]
+ 
+	}
+
+// SMA SunnyBoy Storage 3.7 Daily Yield
+	Bridge poller DayYield "SMA Inverter 2 Poller Daily Yield" [ start=30537, length=4, refresh=60000, type="input" ] {
+	    
+		Thing data DayYield "SMA Inverter 2 Day Yield" [ readStart="30537", readValueType="int32" ]
+ 
+	}
+
+// SMA SunnyBoy Storage 3.7 Power
+	Bridge poller Power "SMA Inverter 2 Poller Power" [ start=30775, length=4, refresh=5000, type="input" ] {
+	    
+		Thing data Power "SMA Inverter 2 Power" [ readStart="30775", readValueType="int32" ]
+		Thing data PowerL1 "SMA Inverter 2 Power L1" [ readStart="30777", readValueType="int32" ]
+
+	}
+
+// SMA SunnyBoy Storage 3.7 Grid Voltage L1
+	Bridge poller GVoltageL1 "SMA Inverter 2 Poller Voltage L1" [ start=30783, length=4, refresh=5000, type="input" ] {
+	    
+		Thing data GVoltageL1 "SMA Inverter 2 Voltage L1" [ readStart="30783", readValueType="int32", readTransform="JS(divide100.js)" ]
+ 
+	}
+
+// SMA SunnyBoy Storage 3.7 Current battery state
+	Bridge poller CurrentBatStatCharge "SMA Inverter 2 Poller Current Battery Charge" [ start=30845, length=6, refresh=15000, type="input" ] {
+	    
+		Thing data CurrentBatStatCharge "SMA Inverter 2 Current Battery Charge State" [ readStart="30845", readValueType="int32" ]
+		Thing data CurrentBatcapacity "SMA Inverter 2 Current Battery Capacity" [ readStart="30847", readValueType="int32" ]
+		Thing data CurrentBatTemp "SMA Inverter 2 Current Battery Temperature" [ readStart="30849", readValueType="int32", readTransform="JS(smalimit10_undef.js)" ]
+
+	}
+
+// SMA SunnyBoy Storage 3.7 PowerDrawn
+	Bridge poller PowerDrawn "SMA Inverter 2 Poller Power Drawn" [ start=30865, length=4, refresh=5000, type="input" ] {
+	    
+		Thing data PowerDrawn "SMA Inverter 2 Power Drawn" [ readStart="30865", readValueType="int32" ]
+		Thing data PowerGridFeedIn "SMA Inverter 2 Power Grid Feed In" [ readStart="30867", readValueType="int32" ]
+ 
+	}
+
+
+// SMA SunnyBoy Storage 3.7 Battery oper. status
+	Bridge poller BatteryStatus "SMA Inverter 2 Poller Battery Status" [ start=30955, length=4, refresh=30000, type="input" ] {
+	    
+		Thing data BatteryStatus "SMA Inverter 2 Battery Status" [ readStart="30955", readValueType="int32" ]
+ 
+	}
+
+// SMA SunnyBoy Storage 3.7 Status battery application area:
+	Bridge poller BatteryAppArea "SMA Inverter 2 Poller Battery App Area" [ start=31057, length=4, refresh=30000, type="input" ] {
+	    
+		Thing data BatteryAppArea "SMA Inverter 2 Battery App Area" [ readStart="31057", readValueType="int32" ]
+ 
+	 }
+
+
+// SMA SunnyBoy Storage 3.7
+	Bridge poller PowerDrawnGridL1 "SMA Inverter 2 Poller Power Grid L1" [ start=31259, length=16, refresh=5000, type="input" ] {
+
+	        Thing data PowerGridFeedL1 "SMA Inverter 2 Power Grid Feed L1" [ readStart="31259", readValueType="int32" ]
+                Thing data PowerGridFeedL2 "SMA Inverter 2 Power Grid Feed L2" [ readStart="31261", readValueType="int32" ] 
+                Thing data PowerGridFeedL3 "SMA Inverter 2 Power Grid Feed L3" [ readStart="31263", readValueType="int32" ]      
+		Thing data PowerDrawnGridL1 "SMA Inverter 2 Power Drawn Grid L1" [ readStart="31265", readValueType="int32" ]
+		Thing data PowerDrawnGridL2 "SMA Inverter 2 Power Drawn Grid L2" [ readStart="31267", readValueType="int32" ]
+		Thing data PowerDrawnGridL3 "SMA Inverter 2 Power Drawn Grid L3" [ readStart="31269", readValueType="int32" ]
+
+	}
+
+// SMA SunnyBoy Storage 3.7 Present battery charge
+	Bridge poller PresBatCharge "SMA Inverter 2 Poller Present Battery Charge" [ start=31393, length=4, refresh=5000, type="input" ] {
+	    
+		Thing data PresBatCharge "SMA Inverter 2 Present Battery Charge" [ readStart="31393", readValueType="int32" ]
+		Thing data PresBattDischarge "SMA Inverter 2 Present Battery Discharge" [ readStart="31395", readValueType="int32" ]
+	 
+	}
+
+
+// SMA SunnyBoy Storage 3.7 Inverter Temperature
+	Bridge poller InternalTemperature "SMA Inverter 2 Poller Internal Temperature" [ start=34113, length=2, refresh=15000, type="input" ] {
+	    
+		Thing data InternalTemperature "SMA Inverter 2 Internal Temperature" [ readStart="34113", readValueType="int32", readTransform="JS(smalimit10_undef.js)" ]
+
+	}
+
+
+// SMA SunnyBoy Storage 3.7 Battery nominal capacity
+	Bridge poller BattNormCap "SMA Inverter 2 Poller Battery Nominal Capacity" [ start=40187, length=2, refresh=300000, type="input" ] {
+
+		Thing data BattNorminalcapac "SMA Inverter 2 Battery Nominal Capacity" [ readStart="40187", readValueType="int32" ]
+ 
+	}
+}

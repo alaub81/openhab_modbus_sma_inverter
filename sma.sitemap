@@ -1,0 +1,100 @@
+sitemap inverters label="SMA PV Installation"
+{
+	Frame label="Summary" {
+		Text  item=TotalPowerConsumption
+		Text  item=PowerConsumptionBatIncl
+		Text  item=inverter1ActivePower label="Total Production"
+		Text  item=inverter1PowerGridFeedIn
+		Text  item=inverter1PowerDrawn
+		Text  item=inverter2PreBatCharge
+		Text  item=inverter2PreBatDischarge
+		Text  item=inverter2BatStateCharge
+                Text  item=inverter1PowerA {
+                        Text  item=inverter1DC1Volt_input
+                        Text  item=inverter1DC1Cur_input
+                        Text  item=inverter1PowerA
+                }
+                Text item=inverter1PowerB {
+                        Text  item=inverter1DC2Volt_input
+                        Text  item=inverter1DC2Cur_input
+                        Text  item=inverter1PowerB
+                }
+                Text item=TotalPowerEarnings
+                Text item=TotalPowerCosts
+	}
+
+	Frame label="SMA Inverter 1" {
+		Text  item=inverter1Status
+		Text  item=inverter1DevType
+		Text  item=inverterGridContactor
+		Text  item=inverter1OpMode
+		Text  item=inverter1MaxPower
+		Text  item=inverter1SetMaxPower
+		Text  item=inverter1InternalTemperature
+	}
+
+	Frame label="Solar Panels" {
+		Text  item=inverter1PowerA {
+			Text  item=inverter1DC1Volt_input
+			Text  item=inverter1DC1Cur_input
+			Text  item=inverter1PowerA
+		}
+		Text item=inverter1PowerB {
+			Text  item=inverter1DC2Volt_input
+			Text  item=inverter1DC2Cur_input
+			Text  item=inverter1PowerB
+		}
+		Text  item=inverter1ActivePower label="Total Watt"
+		Text  item=inverter2BatStateCharge
+		Text  item=inverter2PreBatCharge
+		Text  item=inverter2PreBatDischarge
+	}
+
+	Frame label="Yield" {
+		Text  item=inverter1DailyYield
+		Text  item=inverter1TotalYield
+	}
+
+	Frame label="Grid voltage & Power" {
+		Text  item=inverter1_voltG1
+		Text  item=inverter1PowerL1
+		Text  item=inverter1_voltG2
+		Text  item=inverter1PowerL2
+		Text  item=inverter1_voltG3
+		Text  item=inverter1PowerL3
+	}
+
+	Frame label="SMA Inverter 2" {
+		Text  item=inverter2Status
+		Text  item=inverter2DevType
+		Text  item=inverter2Power
+		Text  item=inverter2PowerL1
+		Text  item=inverter2GVoltageL1
+		Text  item=inverter2GridRelay
+		Text  item=inverter2DayYield
+		Text  item=inverter2TotalYield
+		Text  item=inverter2InternalTemperature
+	}
+
+	Frame label="PowerDrawn/Feed-in" {
+		Text  item=inverter2PowerDrawn
+		Text  item=inverter2PowerGridFeedIn
+		Text  item=inverter2PowDraGridL1
+		Text  item=inverter2PowGridFeedL1
+		Text  item=inverter2PowDraGridL2
+		Text  item=inverter2PowGridFeedL2
+		Text  item=inverter2PowDraGridL3
+		Text  item=inverter2PowGridFeedL3
+        }
+
+	Frame label="BYD B-Box HVS 10.2" {
+		Text  item=inverter2BatteryStatus
+		Text  item=inverter2BatAppArea
+		Text  item=inverter2BatCapacity
+		Text  item=inverter2BatNormCapac
+		Text  item=inverter2BatStateCharge
+		Text  item=inverter2PreBatCharge
+		Text  item=inverter2PreBatDischarge
+		Text  item=inverter2BatTemp
+	}
+}

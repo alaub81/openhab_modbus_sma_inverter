@@ -1,0 +1,55 @@
+// Device Type
+9098=STP 5000TL-20
+9099=STP 6000TL-20
+9100=STP 7000TL-20
+9102=STP 9000TL-20
+9103=STP 8000TL-20
+9281=STP 10000TL-20
+9282=STP 11000TL-20
+9283=STP 12000TL-20
+9326=Sunny Boy Storage 2.5
+9347=STP 8.0
+9356=SBS 3.7-10
+
+// Condition
+35=Fault
+303=OFf
+307=Ok
+308=On
+455=Warning
+
+// Recommended action:
+336=Contact manufacturer
+337=Contact installer
+338=invalid
+887=none
+
+// Grid relay/contactor:
+51=Closed
+311=Open
+16777213=Information not available
+
+// Operating status:
+295=MPP
+381=Off
+569=On
+443=Constant voltage
+1392=Fault
+1393=Waiting for PV voltage
+1467=Start
+1469=Shut down
+1480=Waiting for utilities company
+2119=Derating
+ON=On
+
+// Battery oper. status:
+2291=Battery standby
+2292=Charge battery
+2293=Discharge battery
+
+// Status battery application area:
+2614=Own consumption area
+2615=State of charge conservation area
+2616=Backup power area
+2617=Deep discharge protection area
+2618=Deep discharge area

@@ -1,0 +1,69 @@
+var Timer OverProduction_Timer = null
+var Timer UnderProduction_Timer = null
+var Number 
+
+rule "Total Power Consumption"
+when
+  Item inverter1PowerDrawn received update
+then
+  val Number TotalPower = (inverter1ActivePower.state as DecimalType
+    + inverter2PreBatDischarge.state as DecimalType
+    + inverter1PowerDrawn.state as DecimalType
+    - inverter2PreBatCharge.state as DecimalType
+    - inverter1PowerGridFeedIn.state as DecimalType)
+  if ( TotalPower >= 0 ) {
+    TotalPowerConsumption.postUpdate(TotalPower)
+  }
+
+  val Number PowerBatIncl = (inverter1ActivePower.state as DecimalType
+    + inverter2PreBatDischarge.state as DecimalType
+    + inverter1PowerDrawn.state as DecimalType
+    - inverter1PowerGridFeedIn.state as DecimalType)
+  if ( TotalPower >= 0 ) {
+    PowerConsumptionBatIncl.postUpdate(PowerBatIncl)
+  }
+end
+
+rule "Total Power Earnings"
+when
+  Item SMAEnergyMeter_EingespeisteEnergie received update
+then
+  TotalPowerEarnings.postUpdate(SMAEnergyMeter_EingespeisteEnergie.state as DecimalType * 0.0758)
+end
+
+rule "Total Power Costs"
+when
+  Item SMAEnergyMeter_BezogeneEnergie received update
+then
+  TotalPowerCosts.postUpdate(SMAEnergyMeter_BezogeneEnergie.state as DecimalType * 0.2409)
+end
+
+
+
+
+
+/*
+rule "Overproduction"
+when
+  Item inverter1PowerGridFeedIn received update
+then
+  if ((inverter1PowerGridFeedIn.state < 1300|W) && (OverProduction_Timer!==null) && (UnderProduction_Timer===null)) {
+    UnderProduction_Timer = createTimer(now.plusMinutes(5), [|
+      OverProduction_Timer?.cancel
+      OverProduction_Timer = null
+      //sendBroadcastNotification("Zuwenig Strom da")
+      //Echo_Ankuendigung_ALL.sendCommand("Zuwenig Strom da!")
+      //BadDG_Strom_Alarm.sendCommand(OFF)
+    ])
+  }
+  else if ((inverter1PowerGridFeedIn.state >= 1300|W) && (OverProduction_Timer===null)) {
+    OverProduction_Timer = createTimer(now.plusMinutes(5), [|
+      sendBroadcastNotification("Genug Strom da")
+      Echo_Ankuendigung_ALL.sendCommand("Genug Strom da!")
+      UnderProduction_Timer?.cancel
+      UnderProduction_Timer = null
+      //BadDG_Strom_Alarm.sendCommand(ON)
+    ])
+  }
+end
+*/

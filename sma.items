@@ -1,0 +1,73 @@
+// Inverter 1 TriPower 8.0
+Number inverter1DevType               "Inverter Type [MAP(sma.map):%s]"                 <Inverter>         (Inverter1)  {channel="modbus:data:inverter1:DevType:type:number"}
+
+Number inverter1Status	              "Device Status [MAP(sma.map):%s]"                 <switch>           (Inverter1)  {channel="modbus:data:inverter1:SMA_Status:status:number"}
+Switch inverterGridContactor          "Grid contactor [MAP(sma.map):%s]"                <switch>           (Inverter1)  {channel="modbus:data:inverter1:SMA_Status:Grid_Contactor:switch"}
+
+Number inverter1MaxPower              "Max Power [%s W]"                                <Energy>           (Inverter1)  {channel="modbus:data:inverter1:SMA_Status:Max_Power:number"}
+Number inverter1SetMaxPower           "Max Power Set [%s W]"                            <Energy>           (Inverter1)  {channel="modbus:data:inverter1:SMA_Status:Set_Max_Power:number"}
+
+Number inverter1PowerDrawn            "Power drawn from Grid [%s W]"                    <Energy>           (Inverter1)  {channel="modbus:data:inverter1:PowerDrawn:PowerDrawn:number"}
+Number inverter1PowerGridFeedIn       "Power feedin Grid [%s W]"                        <Energy>           (Inverter1)  {channel="modbus:data:inverter1:PowerDrawn:PowerGridFeedIn:number"}
+
+Number inverter1DailyYield            "Inverter Daily Yield [%s kWh]"                   <line>             (Inverter1)  {channel="modbus:data:inverter1:Yield:Day_Yield:number"}
+Number inverter1TotalYield            "Inverter Total Yield [%s kWh]"                   <line>             (Inverter1)  {channel="modbus:data:inverter1:Yield:Total_Yield:number"}
+
+Number inverter1DC1Cur_input          "Current input A [%s A]"                          <solarplant>       (Inverter1)  {channel="modbus:data:inverter1:power_a:currentA_input:number"}
+Number inverter1DC1Volt_input         "Voltage input A [%s V]"                          <solarplant>       (Inverter1)  {channel="modbus:data:inverter1:power_a:voltageA_input:number"}
+Number inverter1PowerA                "Panel A [%s W]"                                  <solarplant>       (Inverter1)  {channel="modbus:data:inverter1:power_a:powerA_input:number"}
+Number inverter1ActivePower           "Active Power [%s W]"                             <solarplant>	   (Inverter1)  {channel="modbus:data:inverter1:power_a:active_power:number"}
+Number inverter1PowerL1               "Active Power L1 [%s W]"                          <solarplant>	   (Inverter1)  {channel="modbus:data:inverter1:power_a:power_L1:number"}
+Number inverter1PowerL2               "Active Power L2 [%s W]"                          <solarplant>	   (Inverter1)  {channel="modbus:data:inverter1:power_a:power_L2:number"}
+Number inverter1PowerL3               "Active Power L3 [%s W]"                          <solarplant>	   (Inverter1)  {channel="modbus:data:inverter1:power_a:power_L3:number"}
+Number inverter1_voltG1               "Grid voltage phase L1 [%s V]"                    <solarplant>       (Inverter1)  {channel="modbus:data:inverter1:power_a:volt_G1:number"}
+Number inverter1_voltG2               "Grid voltage phase L2 [%s V]"                    <solarplant>       (Inverter1)  {channel="modbus:data:inverter1:power_a:volt_G2:number"}
+Number inverter1_voltG3               "Grid voltage phase L3 [%s V]"                    <solarplant>       (Inverter1)  {channel="modbus:data:inverter1:power_a:volt_G3:number"}
+
+Number inverter1DC2Cur_input          "Current input B [%s A]"                          <solarplant>       (Inverter1)  {channel="modbus:data:inverter1:power_b:currentB_input:number"}
+Number inverter1DC2Volt_input         "Voltage input B [%s V]"                          <solarplant>       (Inverter1)  {channel="modbus:data:inverter1:power_b:voltageB_input:number"}
+Number inverter1PowerB                "Panel B [%s W]"                                  <solarplant>       (Inverter1)  {channel="modbus:data:inverter1:power_b:powerB_input:number"}
+Number inverter1OpMode                "Operation Mode [MAP(sma.map):%s]"                <text>             (Inverter1)  {channel="modbus:data:inverter1:SMA_Status_Operate:operatestatus:number"}
+
+Number inverter1InternalTemperature   "Internal Temperature [%s °C]"                    <temperature>      (Inverter1)  {channel="modbus:data:inverter1:InternalTemperature:InternalTemperature:number"}
+
+// Inverter 2 SunnyBoy Storage 3.7-10
+Number inverter2DevType               "Inverter type [MAP(sma.map):%s]"                 <Inverter>         (Inverter2)  {channel="modbus:data:inverter2:device_typ:device_typ:string"}
+Number inverter2Status                "Device Status [MAP(sma.map):%s]"                 <switch>           (Inverter2)  {channel="modbus:data:inverter2:status:status:string"}
+Switch inverter2GridRelay             "Grid Relay [%s]"                                 <switch>           (Inverter2)  {channel="modbus:data:inverter2:GridRelay:GridRelay:switch"}
+Number inverter2TotalYield            "Total Yield [%s kWh]"                            <line>             (Inverter2)  {channel="modbus:data:inverter2:TotalYield:TotalYield:string"}
+Number inverter2DayYield              "Daily Yield [%s kWh]"                            <line>             (Inverter2)  {channel="modbus:data:inverter2:DayYield:DayYield:string"}
+Number inverter2Power                 "Power [%s W]"                                    <Energy>           (Inverter2)  {channel="modbus:data:inverter2:Power:Power:string"}
+Number inverter2PowerL1               "Power L1 [%s W]"                                 <Energy>           (Inverter2)  {channel="modbus:data:inverter2:Power:PowerL1:string"}
+Number inverter2GVoltageL1            "Grid Voltage L1 [%s V]"                          <Energy>           (Inverter2)  {channel="modbus:data:inverter2:GVoltageL1:GVoltageL1:string"}
+
+Number inverter2BatStateCharge        "Current Battery State Charge [%s %%]"            <batterylevel>     (Inverter2)  {channel="modbus:data:inverter2:CurrentBatStatCharge:CurrentBatStatCharge:number"}
+Number inverter2BatCapacity           "Current Battery Capacity [%s %%]"                <status>           (Inverter2)  {channel="modbus:data:inverter2:CurrentBatStatCharge:CurrentBatcapacity:number"}
+Number inverter2BatTemp               "Current Battery Temperature [%.1f °C]"           <temperature>      (Inverter2)  {channel="modbus:data:inverter2:CurrentBatStatCharge:CurrentBatTemp:number"}
+
+Number inverter2PowerDrawn            "Power drawn from Grid [%s W]"                    <Energy>           (Inverter2)  {channel="modbus:data:inverter2:PowerDrawn:PowerDrawn:number"}
+Number inverter2PowerGridFeedIn       "Power feedin Grid [%s W]"                        <Energy>           (Inverter2)  {channel="modbus:data:inverter2:PowerDrawn:PowerGridFeedIn:number"}
+
+Number inverter2BatteryStatus         "Battery status [MAP(sma.map):%s]"                <switch>           (Inverter2)  {channel="modbus:data:inverter2:BatteryStatus:BatteryStatus:number"}
+Number inverter2BatAppArea            "Battery Application Area [MAP(sma.map):%s]"      <text>             (Inverter2)  {channel="modbus:data:inverter2:BatteryAppArea:BatteryAppArea:number"}
+
+Number inverter2PowGridFeedL1         "Power feedin Grid L1 [%s W]"                     <Energy>           (Inverter2)  {channel="modbus:data:inverter2:PowerDrawnGridL1:PowerGridFeedL1:number"}
+Number inverter2PowGridFeedL2         "Power feedin Grid L2 [%s W]"                     <Energy>           (Inverter2)  {channel="modbus:data:inverter2:PowerDrawnGridL1:PowerGridFeedL2:number"}
+Number inverter2PowGridFeedL3         "Power feedin Grid L3 [%s W]"                     <Energy>           (Inverter2)  {channel="modbus:data:inverter2:PowerDrawnGridL1:PowerGridFeedL3:number"}
+Number inverter2PowDraGridL1          "Power drawn from Grid L1 [%s W]"                 <Energy>           (Inverter2)  {channel="modbus:data:inverter2:PowerDrawnGridL1:PowerDrawnGridL1:number"}
+Number inverter2PowDraGridL2          "Power drawn from Grid L2 [%s W]"                 <Energy>           (Inverter2)  {channel="modbus:data:inverter2:PowerDrawnGridL1:PowerDrawnGridL2:number"}
+Number inverter2PowDraGridL3          "Power drawn from Grid L3 [%s W]"                 <Energy>           (Inverter2)  {channel="modbus:data:inverter2:PowerDrawnGridL1:PowerDrawnGridL3:number"}
+
+Number inverter2PreBatCharge          "Present Battery Charge [%s W]"                   <batterylevel>     (Inverter2)  {channel="modbus:data:inverter2:PresBatCharge:PresBatCharge:number"}
+Number inverter2PreBatDischarge       "Present Battery Discharge [%s W]"                <batterylevel>     (Inverter2)  {channel="modbus:data:inverter2:PresBatCharge:PresBattDischarge:number"}
+
+Number inverter2InternalTemperature   "Internal Temperature [%s °C]"                    <temperature>      (Inverter2)  {channel="modbus:data:inverter2:InternalTemperature:InternalTemperature:number"}
+
+Number inverter2BatNormCapac          "Battery Norminal Capacity [%s Wh]"               <text>             (Inverter2)  {channel="modbus:data:inverter2:BattNormCap:BattNorminalcapac:number"}
+
+
+// Gesamt Strom Verbrauch
+Number TotalPowerConsumption          "Total Consumption [%.0f W]"                      <house>           (Inverter1)
+Number PowerConsumptionBatIncl        "Consumption with Battery Charge [%.0f W]"        <house>           (Inverter1)
+Number TotalPowerEarnings             "Total Power Earnings [%.2f €]"                   <piggybank>       (Inverter1)
+Number TotalPowerCosts                "Total Power Costs [%.2f €]"                      <piggybank>       (Inverter1)
