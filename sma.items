@@ -2,7 +2,7 @@
 Number inverter1DevType               "Inverter Type [MAP(sma.map):%s]"                 <Inverter>         (Inverter1)  {channel="modbus:data:inverter1:DevType:type:number"}
 
 Number inverter1Status	              "Device Status [MAP(sma.map):%s]"                 <switch>           (Inverter1)  {channel="modbus:data:inverter1:SMA_Status:status:number"}
-Switch inverter1GridContactor          "Grid contactor [MAP(sma.map):%s]"                <switch>           (Inverter1)  {channel="modbus:data:inverter1:SMA_Status:Grid_Contactor:switch"}
+Switch inverter1GridContactor         "Grid contactor [MAP(sma.map):%s]"                <switch>           (Inverter1)  {channel="modbus:data:inverter1:SMA_Status:Grid_Contactor:switch"}
 
 Number inverter1MaxPower              "Max Power [%s W]"                                <Energy>           (Inverter1)  {channel="modbus:data:inverter1:SMA_Status:Max_Power:number"}
 Number inverter1SetMaxPower           "Max Power Set [%s W]"                            <Energy>           (Inverter1)  {channel="modbus:data:inverter1:SMA_Status:Set_Max_Power:number"}
