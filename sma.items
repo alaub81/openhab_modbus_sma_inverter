@@ -66,8 +66,6 @@ Number inverter2InternalTemperature   "Internal Temperature [%s °C]"           
 Number inverter2BatNormCapac          "Battery Norminal Capacity [%s Wh]"               <text>             (Inverter2)  {channel="modbus:data:inverter2:BattNormCap:BattNorminalcapac:number"}
 
 
-// Total Power Consumption / Earnings and Costs
+// Total Power Consumption
 Number TotalPowerConsumption          "Total Consumption [%.0f W]"                      <house>            (Inverter1)
 Number PowerConsumptionBatIncl        "Consumption with Battery Charge [%.0f W]"        <house>            (Inverter1)
-Number TotalPowerEarnings             "Total Power Earnings [%.2f €]"                   <piggybank>        (Inverter1)
-Number TotalPowerCosts                "Total Power Costs [%.2f €]"                      <piggybank>        (Inverter1)
