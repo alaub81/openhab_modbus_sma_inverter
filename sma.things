@@ -115,7 +115,7 @@ Bridge modbus:tcp:inverter2 "SMA Inverter 2 Bridge" [ host="192.168.50.42", port
 	Bridge poller Power "SMA Inverter 2 Poller Power" [ start=30775, length=4, refresh=5000, type="input" ] {
 	    
 		Thing data Power "SMA Inverter 2 Power" [ readStart="30775", readValueType="int32" ]
-		Thing data PowerL1 "SMA Inverter 2 Power L1" [ readStart="30777", readValueType="int32" ]
+		Thing data PowerL1 "SMA Inverter 2 Power L1" [ readStart="30777", readValueType="int32", readTransform="JS(smalimit.js)" ]
 
 	}
 
