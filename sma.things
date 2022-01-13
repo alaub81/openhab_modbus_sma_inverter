@@ -122,7 +122,7 @@ Bridge modbus:tcp:inverter2 "SMA Inverter 2 Bridge" [ host="192.168.50.42", port
 // SMA SunnyBoy Storage 3.7 Grid Voltage L1
 	Bridge poller GVoltageL1 "SMA Inverter 2 Poller Voltage L1" [ start=30783, length=4, refresh=5000, type="input" ] {
 	    
-		Thing data GVoltageL1 "SMA Inverter 2 Voltage L1" [ readStart="30783", readValueType="int32", readTransform="JS(divide100.js)" ]
+		Thing data GVoltageL1 "SMA Inverter 2 Voltage L1" [ readStart="30783", readValueType="int32", readTransform="JS(smalimit100.js)" ]
  
 	}
 
