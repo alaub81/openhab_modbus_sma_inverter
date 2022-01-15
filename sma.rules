@@ -1,5 +1,3 @@
-var Number 
-
 rule "Total Power Consumption"
 when
   Item inverter1PowerDrawn received update
