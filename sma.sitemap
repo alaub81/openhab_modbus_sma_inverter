@@ -1,4 +1,4 @@
-sitemap inverters label="SMA PV Installation"
+sitemap sma label="SMA PV Installation"
 {
 	Frame label="Summary" {
 		Text  item=TotalPowerConsumption
