@@ -1,25 +1,24 @@
-var Timer OverProduction_Timer = null
-var Timer UnderProduction_Timer = null
 var Number 
 
 rule "Total Power Consumption"
 when
   Item inverter1PowerDrawn received update
 then
-  val Number TotalPower = (inverter1ActivePower.state as DecimalType
-    + inverter2PreBatDischarge.state as DecimalType
-    + inverter1PowerDrawn.state as DecimalType
-    - inverter2PreBatCharge.state as DecimalType
-    - inverter1PowerGridFeedIn.state as DecimalType)
-  if ( TotalPower >= 0 ) {
+  val Number TotalPower = (inverter1ActivePower.state as QuantityType<Number>
+    + inverter2PreBatDischarge.state as QuantityType<Number>
+    + inverter1PowerDrawn.state as QuantityType<Number>
+    - inverter2PreBatCharge.state as QuantityType<Number>
+    - inverter1PowerGridFeedIn.state as QuantityType<Number>)
+  if ( TotalPower >= 0|"W" ) {
     TotalPowerConsumption.postUpdate(TotalPower)
+    Watt_ALL.postUpdate(TotalPower)
   }
 
-  val Number PowerBatIncl = (inverter1ActivePower.state as DecimalType
-    + inverter2PreBatDischarge.state as DecimalType
-    + inverter1PowerDrawn.state as DecimalType
-    - inverter1PowerGridFeedIn.state as DecimalType)
-  if ( TotalPower >= 0 ) {
+  val Number PowerBatIncl = (inverter1ActivePower.state as QuantityType<Number>
+    + inverter2PreBatDischarge.state as QuantityType<Number>
+    + inverter1PowerDrawn.state as QuantityType<Number>
+    - inverter1PowerGridFeedIn.state as QuantityType<Number>)
+  if ( TotalPower >= 0|"W" ) {
     PowerConsumptionBatIncl.postUpdate(PowerBatIncl)
   }
 end
