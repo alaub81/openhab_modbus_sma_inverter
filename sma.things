@@ -66,7 +66,7 @@ Bridge modbus:tcp:inverter1 "SMA Inverter 1 Bridge" [ host="192.168.50.41", port
 
 
 // SMA Inverter Operation
-	Bridge poller SMA_Status_Operate "SMA Inverter 1 Poller Status Operate" [ start=40029, length=4, refresh=15000, type="holding" ] {
+	Bridge poller SMA_Status_Operate "SMA Inverter 1 Poller Status Operate" [ start=40029, length=4, refresh=15000, type="input" ] {
 
 	       Thing data operatestatus "SMA Inverter 1 Status Operate" [ readStart="40029", readValueType="uint32" ]
 
