@@ -3,6 +3,7 @@ This repository stores everything you need to implement SMA Inverters in openHAB
 
 # Installation
 * Activate Modbus on your Inverters and connect them to your ethernet
+* you need to give the inverters fixed ip addresses (dhcp reservation, or fixed ip on the inverter side)
 * Install Modbus Binding on you openHAB instance
 * Install JavaScript and Map Transfomation in openHAB
 * clone this git repository and store the files in the right openHAB configuration folders:
@@ -21,12 +22,12 @@ This repository stores everything you need to implement SMA Inverters in openHAB
 ```
 that's it... now you should see values in your SMA Sitemap, or in the openHAB UI.
 
-This example Configurations are for:
+These sample configurations are for:
 * SMA Sunny Tripower 8.0
 * SMA SunnyBoy Storage 3.7-10
 
 If you have to use other modbus IDs, you can download modbus documentation from:
 * https://www.sma.de/service/downloads.html
 
-# More Informations:
+# More detailed Informations:
 * https://www.laub-home.de/wiki/OpenHAB_SMA_Wechselrichter_mittels_Modbus_einbinden
