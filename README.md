@@ -1,5 +1,5 @@
-# openhab_modbus_sma_inverter
-This repository stores everything you need to implement SMA Inverters in openHAB with modbus protocol. All you need is an enabled modbus tcp server on your inverters, an openHAB instance with modbus binding installed and all the stuff out of this repository.
+# Description
+This repository stores everything you need to implement SMA Inverters into your openHAB smart home hub using the modbus protocol. All you need is an enabled modbus tcp server on your inverters, an openHAB instance with modbus binding installed and all the stuff out of this repository.
 
 # Installation
 * Activate Modbus on your Inverters and connect them to your ethernet
