@@ -1,0 +1,17 @@
+sitemap shm label="SMA Home Manager 2.0" {
+    Frame label="Systeminformationen" {
+        Text item=SHM_profile_version
+        Text item=SHM_susy_id
+        Text item=SHM_serial
+        Text item=SHM_device_type
+        Text item=SHM_utc_time
+    }
+
+    Frame label="Netzstatus" {
+        Text item=SHM_status
+        Text item=SHM_grid_consumption
+        Text item=SHM_grid_feedin
+        Text item=SHM_power_drawn
+        Text item=SHM_power_feedin
+    }
+}

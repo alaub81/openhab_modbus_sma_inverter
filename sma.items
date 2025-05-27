@@ -1,5 +1,5 @@
 // Inverter 1 TriPower 8.0
-String                    inverter1DevType              "Inverter Type [MAP(sma.map):%s]"             <inverter>      (Inverter1)  ["Status", "Power"]             {channel="modbus:data:inverter1:DevType:type:string"}
+String                    inverter1DevType              "Inverter Type [MAP(sma.map):%s]"             <solarplant>      (Inverter1)  ["Status", "Power"]             {channel="modbus:data:inverter1:DevType:type:string"}
 
 String                    inverter1Status               "Device Status [MAP(sma.map):%s]"             <status>        (Inverter1)  ["Status", "Power"]             {channel="modbus:data:inverter1:SMA_Status:status:string"}
 String                    inverter1GridContactor        "Grid contactor [MAP(sma.map):%s]"            <status>        (Inverter1)  ["Status", "Power"]             {channel="modbus:data:inverter1:SMA_Status:Grid_Contactor:string"}
