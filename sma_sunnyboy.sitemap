@@ -1,0 +1,33 @@
+sitemap sma label="SMA PV Installation SunnyBoy 3.0"
+{
+	Frame label="Summary" {
+		Text  item=inverter3ActivePower label="Total Production"
+		Text  item=inverter3PowerGridFeedIn
+		Text  item=inverter3PowerDrawn
+                Text  item=inverter3PowerA {
+                        Text  item=inverter3DC1Volt_input
+                        Text  item=inverter3DC1Cur_input
+                        Text  item=inverter3PowerA
+                }
+	}
+
+	Frame label="SMA Inverter 3" {
+		Text  item=inverter3Status
+		Text  item=inverter3DevType
+		Text  item=inverter3GridContactor
+		Text  item=inverter3MaxPower
+		Text  item=inverter3SetMaxPower
+		Text  item=inverter3InternalTemperature
+	}
+
+	Frame label="Solar Panels" {
+		Text  item=inverter3DC1Volt_input
+		Text  item=inverter3DC1Cur_input
+		Text  item=inverter3PowerA
+		Text  item=inverter3ActivePower label="Total Watt"
+	}
+
+	Frame label="Yield" {
+		Text  item=inverter3DailyYield
+		Text  item=inverter3TotalYield
+	}

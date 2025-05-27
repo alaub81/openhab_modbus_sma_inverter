@@ -1,0 +1,23 @@
+// Inverter 3 Sunyboy 4.0
+Group                     inverter3                     "SMA Sunny Boy 4.0"                     <solarplant>    (C_TechnicRoom)               ["Inverter"]
+
+Number                    inverter3DevType              "Inverter Type [MAP(sma.map):%s]"       <solarplant>    (inverter3, pEveryChange)     ["Status", "Power"]             {channel="modbus:data:inverter3:DevType:type:number"}
+
+Number                    inverter3Status               "Device Status [MAP(sma.map):%s]"       <status>        (inverter3)                   ["Status", "Power"]             {channel="modbus:data:inverter3:SMA_Status:status:number"}
+Number                    inverter3GridContactor        "Grid contactor [MAP(sma.map):%s]"      <status>        (inverter3, pEveryChange)     ["Status", "Power"]             {channel="modbus:data:inverter3:SMA_Status:Grid_Contactor:number"}
+
+Number:Power              inverter3MaxPower             "Max Power [%.0f W]"                    <Energy>        (inverter3)                   ["Measurement", "Power"]        {channel="modbus:data:inverter3:SMA_Status:Max_Power:number"}
+Number:Power              inverter3SetMaxPower          "Max Power Set [%.0f W]"                <Energy>        (inverter3)                   ["Measurement", "Power"]        {channel="modbus:data:inverter3:SMA_Status:Set_Max_Power:number"}
+
+Number:Power              inverter3PowerDrawn           "Power drawn from Grid [%.0f W]"        <Energy>        (inverter3, pEveryUpdate30s)  ["Measurement", "Power"]        {channel="modbus:data:inverter3:PowerDrawn:PowerDrawn:number"}
+Number:Power              inverter3PowerGridFeedIn      "Power feedin Grid [%.0f W]"            <Energy>        (inverter3, pEveryUpdate30s)  ["Measurement", "Power"]        {channel="modbus:data:inverter3:PowerDrawn:PowerGridFeedIn:number"}
+
+Number:Energy             inverter3DailyYield           "Inverter Daily Yield [%.0f kWh]"       <line>          (inverter3, pEveryChangeCron) ["Measurement", "Energy"]       {channel="modbus:data:inverter3:Yield:Day_Yield:number"}
+Number:Energy             inverter3TotalYield           "Inverter Total Yield [%.0f kWh]"       <line>          (inverter3, pEveryChangeCron) ["Measurement", "Energy"]       {channel="modbus:data:inverter3:Yield:Total_Yield:number"}
+
+Number:ElectricCurrent    inverter3DC1Cur_input         "Current input A [%.2f A]"              <solarplant>    (inverter3, pEveryUpdate30s)  ["Measurement", "Energy"]       {channel="modbus:data:inverter3:power_a:currentA_input:number"}
+Number:ElectricPotential  inverter3DC1Volt_input        "Voltage input A [%.2f V]"              <solarplant>    (inverter3, pEveryUpdate30s)  ["Measurement", "Energy"]       {channel="modbus:data:inverter3:power_a:voltageA_input:number"}
+Number:Power              inverter3PowerA               "Panel A [%.0f W]"                      <solarplant>    (inverter3, pEveryUpdate30s)  ["Measurement", "Power"]        {channel="modbus:data:inverter3:power_a:powerA_input:number"}
+Number:Power              inverter3ActivePower          "Total Production [%.0f W]"             <solarplant>    (inverter3, pEveryUpdate30s)  ["Measurement", "Power"]        {channel="modbus:data:inverter3:power_a:active_power:number"}
+
+Number:Temperature        inverter3InternalTemperature  "Internal Temperature [%.1f °C]"        <temperature>   (inverter3, pEveryUpdate)     ["Measurement", "Temperature"]  {channel="modbus:data:inverter3:InternalTemperature:InternalTemperature:number"}
