@@ -1,31 +1,31 @@
-Bridge modbus:tcp:shm "SMA HomeManager 2.0" [ host="192.168.50.40", port=502, id=1, timeBetweenTransactionsMillis=100 ] {
+Bridge modbus:tcp:shm "SMA HomeManager" [ host="192.168.50.40", port=502, id=1 ] {
 
     // Systeminformationen (Unit ID 1)
     Bridge poller systeminfo "SMA HomeManager Poller Systeminfo" [ start=30001, length=8, refresh=60000, type="input" ] {
-        Thing data profile_version "SMA Profilversion" [ readStart="30001", readValueType="uint32" ]
-        Thing data susy_id "SUSy-ID" [ readStart="30003", readValueType="uint32" ]
-        Thing data serial "Seriennummer" [ readStart="30005", readValueType="uint32" ]        
+        Thing data profile_version "SMA HomeManager Profilversion" [ readStart="30001", readValueType="uint32" ]
+        Thing data susy_id "SMA HomeManager SUSy-ID" [ readStart="30003", readValueType="uint32" ]
+        Thing data serial "SMA HomeManager Seriennummer" [ readStart="30005", readValueType="uint32" ]        
     }
     Bridge poller devType "SMA HomeManager Poller Type" [ start=30053, length=2, refresh=60000, type="input" ] {
-        Thing data device_type "Gerätetyp" [ readStart="30053", readValueType="uint32" ]
+        Thing data device_type "SMA HomeManager Gerätetyp" [ readStart="30053", readValueType="uint32" ]
     }    
     Bridge poller UTCtime "SMA HomeManager Poller UTC" [ start=30193, length=2, refresh=60000, type="input" ] {
-        Thing data utc_time "Systemzeit UTC" [ readStart="30193", readValueType="uint32" ]
+        Thing data utc_time "SMA HomeManager Systemzeit UTC" [ readStart="30193", readValueType="uint32" ]
     }    
 }
 
-Bridge modbus:tcp:shmplant "SMA HomeManager 2.0 Status" [ host="192.168.50.40", port=502, id=2 ] {
+Bridge modbus:tcp:shmplant "SMA HomeManager Status" [ host="192.168.50.40", port=502, id=2 ] {
 
     // Anlagenstatus und Netzwerte (Unit ID 2)
     Bridge poller status [ start=30201, length=2, refresh=30000, type="input" ] {
-        Thing data status "Anlagenzustand" [ readStart="30201", readValueType="uint32" ]
+        Thing data status "SMA HomeManager Anlagenzustand" [ readStart="30201", readValueType="uint32" ]
     }
     Bridge poller grid [ start=30581, length=4, refresh=60000, type="input" ] {    
-        Thing data grid_consumption "Energiebezug Wh" [ readStart="30581", readValueType="uint32" ]
-        Thing data grid_feedin "Energieeinspeisung Wh" [ readStart="30583", readValueType="uint32" ]
+        Thing data grid_consumption "SMA HomeManager Energiebezug Wh" [ readStart="30581", readValueType="uint32" ]
+        Thing data grid_feedin "SMA HomeManager Energieeinspeisung Wh" [ readStart="30583", readValueType="uint32" ]
     }    
     Bridge poller power [ start=30865, length=4, refresh=5000, type="input" ] {    
-        Thing data power_drawn "Aktueller Netzbezug W" [ readStart="30865", readValueType="int32" ]
-        Thing data power_feedin "Aktuelle Einspeisung W" [ readStart="30867", readValueType="int32" ]
+        Thing data power_drawn "SMA HomeManager Aktueller Netzbezug W" [ readStart="30865", readValueType="int32" ]
+        Thing data power_feedin "SMA HomeManager Aktuelle Einspeisung W" [ readStart="30867", readValueType="int32" ]
     }
 }

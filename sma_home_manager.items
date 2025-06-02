@@ -3,10 +3,10 @@ Group SMA_HomeManager "SMA HomeManager 2.0" <solarplant> (C_TechnicRoom) ["Inver
 Number SHM_profile_version "Profilversion [%d]" <status> (SMA_HomeManager, pEveryChange) ["Status", "Power"] { channel="modbus:data:shm:systeminfo:profile_version:number" }
 Number SHM_susy_id "SUSy-ID [%d]" <status> (SMA_HomeManager, pEveryChange) ["Status", "Power"] { channel="modbus:data:shm:systeminfo:susy_id:number" }
 Number SHM_serial "Seriennummer [%d]" <status> (SMA_HomeManager, pEveryChange) ["Status", "Power"] { channel="modbus:data:shm:systeminfo:serial:number" }
-Number SHM_device_type "Gerätetyp [MAP(sma.map):%s]" <solarplant> (SMA_HomeManager, pEveryChange) ["Status", "Power"] { channel="modbus:data:shm:devType:device_type:number" }
+String SHM_device_type "Gerätetyp [MAP(sma.map):%s]" <solarplant> (SMA_HomeManager, pEveryChange) ["Status", "Power"] { channel="modbus:data:shm:devType:device_type:number" }
 DateTime SHM_utc_time "UTC-Zeit [%1$tF %1$tT]" <time> (SMA_HomeManager, pEveryChange) ["Status", "Timestamp"] { channel="modbus:data:shm:UTCtime:utc_time:datetime" }
 
-Number SHM_status "Status [MAP(sma.map):%s]" <status> (SMA_HomeManager, pEveryChange) ["Status", "Power"] { channel="modbus:data:shmplant:status:status:number" }
+String SHM_status "Status [MAP(sma.map):%s]" <status> (SMA_HomeManager, pEveryChange) ["Status", "Power"] { channel="modbus:data:shmplant:status:status:number" }
 Number:Energy SHM_grid_consumption "Bezogene Energie [%.1f Wh]" <Energy> (SMA_HomeManager, pEveryUpdate30s) ["Measurement", "Energy"] { channel="modbus:data:shmplant:grid:grid_consumption:number" }
 Number:Energy SHM_grid_feedin "Eingespeiste Energie [%.1f Wh]" <Energy> (SMA_HomeManager, pEveryUpdate30s) ["Measurement", "Energy"] { channel="modbus:data:shmplant:grid:grid_feedin:number" }
 Number:Power SHM_power_drawn "Leistung Bezug [%.0f W]" <Energy> (SMA_HomeManager, pEveryUpdate30s) ["Measurement", "Power"] { channel="modbus:data:shmplant:power:power_drawn:number" }

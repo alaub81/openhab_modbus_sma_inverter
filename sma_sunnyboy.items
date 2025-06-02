@@ -1,10 +1,10 @@
 // Inverter 3 Sunyboy 4.0
 Group                     inverter3                     "SMA Sunny Boy 4.0"                     <solarplant>    (C_TechnicRoom)               ["Inverter"]
 
-Number                    inverter3DevType              "Inverter Type [MAP(sma.map):%s]"       <solarplant>    (inverter3, pEveryChange)     ["Status", "Power"]             {channel="modbus:data:inverter3:DevType:type:number"}
+String                    inverter3DevType              "Inverter Type [MAP(sma.map):%s]"       <solarplant>    (inverter3, pEveryChange)     ["Status", "Power"]             {channel="modbus:data:inverter3:DevType:type:number"}
 
-Number                    inverter3Status               "Device Status [MAP(sma.map):%s]"       <status>        (inverter3)                   ["Status", "Power"]             {channel="modbus:data:inverter3:SMA_Status:status:number"}
-Number                    inverter3GridContactor        "Grid contactor [MAP(sma.map):%s]"      <status>        (inverter3, pEveryChange)     ["Status", "Power"]             {channel="modbus:data:inverter3:SMA_Status:Grid_Contactor:number"}
+String                    inverter3Status               "Device Status [MAP(sma.map):%s]"       <status>        (inverter3)                   ["Status", "Power"]             {channel="modbus:data:inverter3:SMA_Status:status:number"}
+String                    inverter3GridContactor        "Grid contactor [MAP(sma.map):%s]"      <status>        (inverter3, pEveryChange)     ["Status", "Power"]             {channel="modbus:data:inverter3:SMA_Status:Grid_Contactor:number"}
 
 Number:Power              inverter3MaxPower             "Max Power [%.0f W]"                    <Energy>        (inverter3)                   ["Measurement", "Power"]        {channel="modbus:data:inverter3:SMA_Status:Max_Power:number"}
 Number:Power              inverter3SetMaxPower          "Max Power Set [%.0f W]"                <Energy>        (inverter3)                   ["Measurement", "Power"]        {channel="modbus:data:inverter3:SMA_Status:Set_Max_Power:number"}
