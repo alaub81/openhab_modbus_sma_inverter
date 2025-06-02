@@ -20,4 +20,8 @@ Number:ElectricPotential  inverter3DC1Volt_input        "Voltage input A [%.2f V
 Number:Power              inverter3PowerA               "Panel A [%.0f W]"                      <solarplant>    (inverter3, pEveryUpdate30s)  ["Measurement", "Power"]        {channel="modbus:data:inverter3:power_a:powerA_input:number"}
 Number:Power              inverter3ActivePower          "Total Production [%.0f W]"             <solarplant>    (inverter3, pEveryUpdate30s)  ["Measurement", "Power"]        {channel="modbus:data:inverter3:power_a:active_power:number"}
 
+// Number:ElectricCurrent    inverter3DC2Cur_input         "Current input B [%.3f A]"              <solarplant>    (Inverter1)                   ["Measurement", "Energy"]       {channel="modbus:data:inverter3:power_b:currentB_input:number"}
+// Number:ElectricPotential  inverter3DC2Volt_input        "Voltage input B [%.2f V]"              <solarplant>    (Inverter1)                   ["Measurement", "Energy"]       {channel="modbus:data:inverter3:power_b:voltageB_input:number"}
+// Number:Power              inverter3PowerB               "Panel B [%.0f W]"                      <solarplant>    (Inverter1)                   ["Measurement", "Power"]        {channel="modbus:data:inverter3:power_b:powerB_input:number"}
+
 Number:Temperature        inverter3InternalTemperature  "Internal Temperature [%.1f °C]"        <temperature>   (inverter3, pEveryUpdate)     ["Measurement", "Temperature"]  {channel="modbus:data:inverter3:InternalTemperature:InternalTemperature:number"}

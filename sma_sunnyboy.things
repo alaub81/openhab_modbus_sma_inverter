@@ -1,4 +1,4 @@
-// SMA Inverter 3 (Sunny Boy 3.0)
+// SMA Inverter 3 (Sunny Boy)
 Bridge modbus:tcp:inverter3 "SMA Inverter 3 Bridge" [ host="192.168.50.44", port=502, id=3, connectMaxTries=3 ] {
 
     // SMA Inverter Device Type
@@ -33,8 +33,17 @@ Bridge modbus:tcp:inverter3 "SMA Inverter 3 Bridge" [ host="192.168.50.44", port
         Thing data powerA_input "SMA Inverter 3 Power A" [ readStart="30773", readValueType="int32", readTransform="JS(smalimit.js)" ]
         Thing data active_power "SMA Inverter 3 Active Power" [ readStart="30775", readValueType="int32", readTransform="JS(smalimit.js)" ]
         Thing data power_L1 "SMA Inverter 3 Power L1" [ readStart="30777", readValueType="int32", readTransform="JS(smalimit.js)" ]
-        Thing data volt_G1 "SMA Inverter 1 Volt G1" [ readStart="30783", readValueType="uint32", readTransform="JS(smalimit100.js)" ]
+        Thing data volt_G1 "SMA Inverter 3 Volt G1" [ readStart="30783", readValueType="uint32", readTransform="JS(smalimit100.js)" ]
     }
+
+    // SMA Inverter Power Section B
+	// Bridge poller power_b "SMA Inverter 3 Poller Power B" [ start=30957, length=8, refresh=5000, type="input" ] {
+
+    //     Thing data currentB_input "SMA Inverter 3 Current Input B" [ readStart="30957", readValueType="int32", readTransform="JS(smalimit1000.js)" ]
+	//     Thing data voltageB_input "SMA Inverter 3 Voltage B" [ readStart="30959", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+	//     Thing data powerB_input "SMA Inverter 3 Power B" [ readStart="30961", readValueType="int32", readTransform="JS(smalimit.js)" ] 
+
+	// }
 
     // SMA Inverter Temperature
 	Bridge poller InternalTemperature "SMA Inverter 3 Poller Internal Temperature" [ start=34113, length=2, refresh=15000, type="input" ] {
