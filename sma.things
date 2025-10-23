@@ -10,10 +10,10 @@ Bridge modbus:tcp:inverter1 "SMA Inverter 1 Bridge" [ host="192.168.50.41", port
 // SMA Inverter Status
 	Bridge poller SMA_Status "SMA Inverter 1 Poller Status"          [ start=30201, length=36, refresh=20000, type="input" ] {
 
-               Thing data status "SMA Inverter 1 Status" [ readStart="30201", readValueType="int32" ]
-               Thing data Grid_Contactor "SMA Inverter 1 Grid Contactor" [ readStart="30217", readValueType="int32" ]
-               Thing data Max_Power "SMA Inverter 1 Max Power" [ readStart="30231", readValueType="int32" ]
-               Thing data Set_Max_Power "SMA Inverter 1 Set Max Power" [ readStart="30233", readValueType="int32" ]
+		Thing data status "SMA Inverter 1 Status" [ readStart="30201", readValueType="int32" ]
+		Thing data Grid_Contactor "SMA Inverter 1 Grid Contactor" [ readStart="30217", readValueType="int32" ]
+		Thing data Max_Power "SMA Inverter 1 Max Power" [ readStart="30231", readValueType="int32" ]
+		Thing data Set_Max_Power "SMA Inverter 1 Set Max Power" [ readStart="30233", readValueType="int32" ]
 
 	}
 
@@ -27,33 +27,33 @@ Bridge modbus:tcp:inverter1 "SMA Inverter 1 Bridge" [ host="192.168.50.41", port
 // SMA Inverter Yield
 	Bridge poller Yield "SMA Inverter 1 Poller Yield" [ start=30517, length=36, refresh=60000, type="input" ] {
 
-               Thing data Day_Yield "SMA Inverter 1 Day Yield" [ readStart="30537", readValueType="int32", readTransform="JS(smalimit_undef.js)" ]
-               Thing data Total_Yield "SMA Inverter 1 Total Yield" [ readStart="30531", readValueType="int32", readTransform="JS(smalimit_undef.js)" ]
+		Thing data Day_Yield "SMA Inverter 1 Day Yield" [ readStart="30537", readValueType="int32", readTransform="JS(smalimit_undef.js)" ]
+		Thing data Total_Yield "SMA Inverter 1 Total Yield" [ readStart="30531", readValueType="int32", readTransform="JS(smalimit_undef.js)" ]
 
 	}
 
 // SMA Inverter Power Section A & Total
 	Bridge poller power_a "SMA Inverter 1 Poller Power A and Total" [ start=30769, length=20, refresh=5000, type="input" ] {
 
-	       Thing data currentA_input "SMA Inverter 1 Current Input A" [ readStart="30769", readValueType="int32", readTransform="JS(smalimit1000.js)" ]
-	       Thing data voltageA_input "SMA Inverter 1 Voltage A" [ readStart="30771", readValueType="int32", readTransform="JS(smalimit100.js)" ]
-	       Thing data powerA_input "SMA Inverter 1 Power A" [ readStart="30773", readValueType="int32", readTransform="JS(smalimit.js)" ]
-	       Thing data active_power "SMA Inverter 1 Active Power" [ readStart="30775", readValueType="int32", readTransform="JS(smalimit.js)" ]
-	       Thing data power_L1 "SMA Inverter 1 Power L1" [ readStart="30777", readValueType="int32", readTransform="JS(smalimit.js)" ]
-	       Thing data power_L2 "SMA Inverter 1 Power L2" [ readStart="30779", readValueType="int32", readTransform="JS(smalimit.js)" ]
-	       Thing data power_L3 "SMA Inverter 1 Power L3" [ readStart="30781", readValueType="int32", readTransform="JS(smalimit.js)" ]
-	       Thing data volt_G1 "SMA Inverter 1 Volt G1" [ readStart="30783", readValueType="int32", readTransform="JS(smalimit100.js)" ]
-	       Thing data volt_G2 "SMA Inverter 1 Volt G2" [ readStart="30785", readValueType="int32", readTransform="JS(smalimit100.js)" ]
-	       Thing data volt_G3 "SMA Inverter 1 Volt G3" [ readStart="30787", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+		Thing data currentA_input "SMA Inverter 1 Current Input A" [ readStart="30769", readValueType="int32", readTransform="JS(smalimit1000.js)" ]
+		Thing data voltageA_input "SMA Inverter 1 Voltage A" [ readStart="30771", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+		Thing data powerA_input "SMA Inverter 1 Power A" [ readStart="30773", readValueType="int32", readTransform="JS(smalimit.js)" ]
+		Thing data active_power "SMA Inverter 1 Active Power" [ readStart="30775", readValueType="int32", readTransform="JS(smalimit.js)" ]
+		Thing data power_L1 "SMA Inverter 1 Power L1" [ readStart="30777", readValueType="int32", readTransform="JS(smalimit.js)" ]
+		Thing data power_L2 "SMA Inverter 1 Power L2" [ readStart="30779", readValueType="int32", readTransform="JS(smalimit.js)" ]
+		Thing data power_L3 "SMA Inverter 1 Power L3" [ readStart="30781", readValueType="int32", readTransform="JS(smalimit.js)" ]
+		Thing data volt_G1 "SMA Inverter 1 Volt G1" [ readStart="30783", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+		Thing data volt_G2 "SMA Inverter 1 Volt G2" [ readStart="30785", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+		Thing data volt_G3 "SMA Inverter 1 Volt G3" [ readStart="30787", readValueType="int32", readTransform="JS(smalimit100.js)" ]
 
 	}
 
 // SMA Inverter Power Section B
 	Bridge poller power_b "SMA Inverter 1 Poller Power B" [ start=30957, length=8, refresh=5000, type="input" ] {
 
-               Thing data currentB_input "SMA Inverter 1 Current Input B" [ readStart="30957", readValueType="int32", readTransform="JS(smalimit1000.js)" ]
-	       Thing data voltageB_input "SMA Inverter 1 Voltage B" [ readStart="30959", readValueType="int32", readTransform="JS(smalimit100.js)" ]
-	       Thing data powerB_input "SMA Inverter 1 Power B" [ readStart="30961", readValueType="int32", readTransform="JS(smalimit.js)" ] 
+		Thing data currentB_input "SMA Inverter 1 Current Input B" [ readStart="30957", readValueType="int32", readTransform="JS(smalimit1000.js)" ]
+		Thing data voltageB_input "SMA Inverter 1 Voltage B" [ readStart="30959", readValueType="int32", readTransform="JS(smalimit100.js)" ]
+		Thing data powerB_input "SMA Inverter 1 Power B" [ readStart="30961", readValueType="int32", readTransform="JS(smalimit.js)" ] 
 
 	}
 
@@ -68,7 +68,7 @@ Bridge modbus:tcp:inverter1 "SMA Inverter 1 Bridge" [ host="192.168.50.41", port
 // SMA Inverter Operation
 	Bridge poller SMA_Status_Operate "SMA Inverter 1 Poller Status Operate" [ start=40029, length=4, refresh=15000, type="input" ] {
 
-	       Thing data operatestatus "SMA Inverter 1 Status Operate" [ readStart="40029", readValueType="uint32" ]
+		Thing data operatestatus "SMA Inverter 1 Status Operate" [ readStart="40029", readValueType="uint32" ]
 
 	}
 }
@@ -162,9 +162,9 @@ Bridge modbus:tcp:inverter2 "SMA Inverter 2 Bridge" [ host="192.168.50.42", port
 // SMA SunnyBoy Storage 3.7
 	Bridge poller PowerDrawnGridL1 "SMA Inverter 2 Poller Power Grid L1" [ start=31259, length=16, refresh=5000, type="input" ] {
 
-	        Thing data PowerGridFeedL1 "SMA Inverter 2 Power Grid Feed L1" [ readStart="31259", readValueType="int32" ]
-                Thing data PowerGridFeedL2 "SMA Inverter 2 Power Grid Feed L2" [ readStart="31261", readValueType="int32" ] 
-                Thing data PowerGridFeedL3 "SMA Inverter 2 Power Grid Feed L3" [ readStart="31263", readValueType="int32" ]      
+	    Thing data PowerGridFeedL1 "SMA Inverter 2 Power Grid Feed L1" [ readStart="31259", readValueType="int32" ]
+        Thing data PowerGridFeedL2 "SMA Inverter 2 Power Grid Feed L2" [ readStart="31261", readValueType="int32" ] 
+        Thing data PowerGridFeedL3 "SMA Inverter 2 Power Grid Feed L3" [ readStart="31263", readValueType="int32" ]      
 		Thing data PowerDrawnGridL1 "SMA Inverter 2 Power Drawn Grid L1" [ readStart="31265", readValueType="int32" ]
 		Thing data PowerDrawnGridL2 "SMA Inverter 2 Power Drawn Grid L2" [ readStart="31267", readValueType="int32" ]
 		Thing data PowerDrawnGridL3 "SMA Inverter 2 Power Drawn Grid L3" [ readStart="31269", readValueType="int32" ]
